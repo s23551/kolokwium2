@@ -16,4 +16,9 @@ public class User
     [Required]
     [MaxLength(200)]
     public string LastName { get; set; }
+    
+    public virtual ICollection<Access> Accesses { get; set; }
+    public virtual ICollection<Project> Projects { get; set; }
+    public virtual ICollection<Task> TaskReported { get; set; }
+    public virtual ICollection<Task> TaskAssigned { get; set; }
 }

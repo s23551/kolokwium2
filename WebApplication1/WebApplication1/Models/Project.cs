@@ -13,9 +13,13 @@ public class Project
     [MaxLength(200)]
     public string Name { get; set; }
 
+    [Required]
     public int  IdDefaultAssignee { get; set; }
 
     [Required]
     [ForeignKey("IdDefaultAssignee")]
     public virtual User DefaultAssignee { get; set; }
+
+    public ICollection<Access> Accesses;
+    public ICollection<Task> Tasks;
 }
